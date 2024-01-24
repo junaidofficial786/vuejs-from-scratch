@@ -6,7 +6,7 @@
             <form @submit.prevent="save">
                 <input
                     class="px-3 py-2 placeholder-gray-400 border rounded-md shadow-sm focus:ring focus:ring-indigo-200 focus:outline-none"
-                    type="text" v-model="newHero" placeholder="Add Hero ...">
+                    type="text" v-model="newHero" :placeholder="$route.params.id">
                 <button type="submit"
                     class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow">Save</button>
             </form>
@@ -25,6 +25,8 @@
 </template>
 
 <script>
+import router from "../routes/index.js";
+
 export default {
     data() {
         return {
@@ -69,6 +71,9 @@ export default {
     },
 
     methods: {
+      router() {
+        return router
+      },
         alert(name) {
             alert(name);
         },

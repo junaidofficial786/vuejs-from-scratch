@@ -1,0 +1,37 @@
+<script>
+import {marked} from 'marked';
+export default {
+  data () {
+    return {
+      text: ""
+    }
+  },
+
+  computed: {
+    markedText() {
+      return marked(this.text)
+    }
+  }
+}
+</script>
+
+<template>
+  <div class="flex w-full flex-wrap">
+    <h1 class="w-full text-center text-lg">
+      Markdown App
+    </h1>
+    <section class="flex m-auto w-10/12 h-screen">
+      <article class="w-1/2 border">
+        <textarea class="w-full h-full" v-model.lazy="text"></textarea>
+      </article>
+
+      <article class="w-1/2 border">
+        <div class="w-full h-full" v-html="markedText"></div>
+      </article>
+    </section>
+  </div>
+</template>
+
+<style scoped>
+
+</style>
