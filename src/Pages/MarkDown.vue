@@ -3,7 +3,17 @@ import {marked} from 'marked';
 export default {
   data () {
     return {
-      text: ""
+      text: "",
+      timeout: ""
+    }
+  },
+
+  methods: {
+    update(e) {
+      clearTimeout(this.timeout);
+      this.timeout = setTimeout(() => {
+        this.text = e.target.value;
+      }, 1000);
     }
   },
 
@@ -22,7 +32,7 @@ export default {
     </h1>
     <section class="flex m-auto w-10/12 h-screen">
       <article class="w-1/2 border">
-        <textarea class="w-full h-full" v-model.lazy="text"></textarea>
+        <textarea class="w-full h-full" @input="update" :value="text"></textarea>
       </article>
 
       <article class="w-1/2 border">
