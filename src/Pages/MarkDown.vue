@@ -10,10 +10,13 @@ export default {
 
   methods: {
     update(e) {
+      const task = () => (this.text = e.target.value);
+      this.debounce(task, 500)
+    },
+
+    debounce(func, wait = 1000) {
       clearTimeout(this.timeout);
-      this.timeout = setTimeout(() => {
-        this.text = e.target.value;
-      }, 1000);
+      this.timeout = setTimeout(func, wait)
     }
   },
 
