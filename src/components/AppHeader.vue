@@ -11,9 +11,9 @@ export default {
     data() {
         return {
             routesList: [
-                { title: 'Heroes', to: '/heroes' },
-                { title: 'Calendar', to: '/calendar' },
-                { title: 'Markdown', to: '/markdown' }
+                { title: 'Dashboard', to: '/' },
+                { title: 'Heroes', to: '/heros' },
+                { title: 'Calendar', to: '/calendar' }
             ]
         }
     }

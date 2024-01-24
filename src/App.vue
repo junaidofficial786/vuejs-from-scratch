@@ -2,12 +2,14 @@
 
   <app-header />
 
-  <welcome-page />
+  <router-view />
+
+  <!-- <welcome-page />
 
   <dc-heros />
   
-  <my-calendar />
-  
+  <my-calendar /> -->
+
 </template>
 
 <script>
