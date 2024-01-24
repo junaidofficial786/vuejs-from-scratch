@@ -1,15 +1,21 @@
-<script setup>
-</script>
-
 <template>
-  <div>
-    Heading part
-  </div>
-  <div>
-    Content part
-  </div>
+
+  <app-header />
+
+  <welcome-page />
+
+  <dc-heros />
+  
+  <my-calendar />
+  
 </template>
 
-<style scoped>
-
-</style>
+<script>
+import AppHeader from './components/AppHeader.vue';
+import DcHeros from './components/DcHeros.vue';
+import MyCalendar from './components/MyCalendar.vue';
+import WelcomePage from './components/WelcomePage.vue';
+export default {
+  components: { AppHeader, DcHeros, MyCalendar, WelcomePage },  
+}
+</script>
